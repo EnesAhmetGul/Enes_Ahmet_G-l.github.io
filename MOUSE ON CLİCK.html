@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <style>  
+        td:hover {background-color: brown;}
+
+        table.center {
+          margin-left: auto; 
+          margin-right: auto;
+        }
+        td.center {
+          margin-left: auto; 
+          margin-right: auto;
+        }
+        </style>
+        <script>
+            function Bosis() {
+                window.alert("Burada Görülecek Bir Şey Yok");
+            }
+            function SD1() {
+                window.alert("Style Değiştirildi!");
+                document.getElementById('id1').style="color = 'blue';font-family: 'Comic Sans MS'"
+            }
+            function SD2() {
+                window.alert("Style Değiştirildi!");
+                document.getElementById('id2').style="color = 'blue';font-family: 'Comic Sans MS'"
+            }
+            function SD3() {
+                window.alert("Style Değiştirildi!");
+                document.getElementById('id3').style="color = 'blue';font-family: 'Comic Sans MS'"
+            }
+            function MTNO1() {
+                window.alert("Oluşan Nesneyi Konsoldan Görebilirsiniz");
+                let Adam = {ilk:"KARGALARIN",son:"BRONZ"}
+                console.log(Adam.ilk)
+            }
+            function MTNO2() {
+                window.alert("Oluşan Nesneyi Konsoldan Görebilirsiniz");
+                let Adam = {ilk:"KONUŞABİLECEĞİNİ",son:"GÜMÜŞ"}
+                console.log(Adam.ilk)
+            }
+            function MTNO3() {
+                window.alert("Oluşan Nesneyi Konsoldan Görebilirsiniz");
+                let Adam = {ilk:"BİLİYORMUYDUNUZ",son:"ALTIN"}
+                console.log(Adam.ilk)
+            }
+        </script>
+</head>
+<body style="background-color: rgb(199, 214, 198);">
+        <table class="center" border=2 style="height: 500; width: 1000; border: rgb(22, 21, 21);">
+            <tr>
+                <td onclick="Bosis()">Style Değiştiren</td>
+                <td onclick="Bosis()">Nesne Oluşturan</td>
+            </tr>
+            <tr>
+                <td id="id1" onclick="SD1()">Mouse tıklayınca style değişecek</td>
+                <td onclick="MTNO1()">Mouse tıklayınca nesne oluşacak</td>
+            </tr>
+            <tr>
+                <td id="id2" onmouseover="SD2()">Mouse üzerine gelince style değişecek</td>
+                <td onmouseover="MTNO2()">Mouse üzerine gelince nesne oluşacak</td>
+            </tr>
+            <tr>
+                <td id="id3" onmouseleave="SD3()">Mouse üzerinden gidince style değişecek</td>
+                <td onmouseleave="MTNO3()">Mouse üzerinden gidince nesne oluşacak</td>
+            </tr>
+    </table>
+ 
+</body>
+</html>
