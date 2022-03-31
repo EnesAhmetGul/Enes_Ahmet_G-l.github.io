@@ -1,0 +1,49 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        
+        <input type="text" name="text" id="gecici"/>
+        <button onclick="pushData();">Push</button>
+        <button onclick="popData();">Pop</button>
+        <p id="Text"></p>
+        
+        <script>
+
+            var Arry = [];
+            
+            function pushData()
+            {
+                var inputText = document.getElementById('gecici').value;
+                
+                Arry.push(inputText);
+                
+                var val = "";
+                
+                for(i = 0; i < Arry.length; i++) //bu kısımı internetten buldum
+                {
+                    val = val + Arry[i] + "<br/>";
+                }
+
+                document.getElementById('Text').innerHTML = val;
+            }
+            function popData()
+            {
+                var inputText = document.getElementById('gecici').value;
+                
+                Arry.pop(inputText);
+                
+                var val = "";
+                
+                for(i = 0; i < Arry.length; i++) //bu kısımı internetten buldum
+                {
+                    val = val + Arry[i] + "<br/>";
+                }
+
+                document.getElementById('Text').innerHTML = val;
+            }
+        </script>
+
+    </body>
+</html>
