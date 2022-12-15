@@ -1,0 +1,70 @@
+package com.mycompany.margesort;
+
+/**
+ *
+ * @author Ogrenci
+ */
+import java.util.Arrays;
+ 
+public class MargeSort{
+    
+  public static void main(String[] args)
+  {
+    int[] str = { 45, 87, 11, 5, 80, 9, 02, 560, 33, 99, 1 };
+    System.out.println("Once: ");
+    System.out.println(Arrays.toString(str));
+ 
+    mergesort(str);
+ 
+    System.out.println("Sonra: ");
+    System.out.println(Arrays.toString(str));
+  }
+ 
+//  class'lara ayırmamak için
+  public static void mergesort(int[] str){
+    mergesort(str, 0, str.length - 1);
+  }
+ 
+  private static void mergesort(int[] str, int bas, int son){
+    int ort = (bas + son) / 2;
+    
+//    bölüp gönderme
+    if (bas < son){
+      mergesort(str, bas, ort);
+      mergesort(str, ort + 1, son);
+    }
+ 
+    int i = 0, first = bas, last = ort + 1;
+    
+    int[] gec = new int[son - bas + 1];
+    
+    
+//     birleştirme
+    while (first <= ort && last <= son){
+//      gec[i++] = str[first] < str[last] ? str[first++] : str[last++];  !!! if else yapmanın farklı şekli buna çalış !!!
+      if(str[first] < str[last]){
+          gec[i++] = str[first++];
+      }
+      else {
+          gec[i++] = str[last++];
+      }
+    }
+    
+    
+//    düzenleme {
+    while (first <= ort){
+      gec[i++] = str[first++];
+    }
+    
+    while (last <= son){
+      gec[i++] = str[last++];
+    }
+    i = 0;
+    
+//  }
+    
+    while (bas <= son){
+      str[bas++] = gec[i++];
+    }
+  }
+}
